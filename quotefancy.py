@@ -32,4 +32,4 @@ async def quotefancy(e):
         quote = get_quote("text")
         await eor(e, f"`{quote}`")
     except Exception as e:
-        await eor(e, f"**ERROR** - {str(e)}")
+        await eor(e, f'**ERROR** - {e}')

@@ -40,7 +40,7 @@ async def _(event):
                 events.NewMessage(incoming=True, from_users=1031952739)
             )
             er = await event.client.forward_messages(chat, reply_message)
-            if not len(col) == 0:  # Bad way
+            if len(col) != 0:  # Bad way
                 await asyncio.sleep(3)
                 await er.reply(f"/q {col}")
             response = await response
@@ -236,7 +236,7 @@ async def process(msg, user, client, reply, replied=None):
         canvas.paste(stimg, (pfpbg.width + 10, 10))
         os.remove(sticker)
         return True, canvas
-    elif reply.document and not reply.audio and not reply.audio:
+    elif reply.document and not reply.audio:
         docname = ".".join(reply.document.attributes[-1].file_name.split(".")[:-1])
         doctype = reply.document.attributes[-1].file_name.split(".")[-1].upper()
         if reply.document.size < 1024:

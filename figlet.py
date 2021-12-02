@@ -5,12 +5,12 @@
     Make a text a figlet.
 """
 
+
 import pyfiglet
 
 from . import *
 
 CMD_SET = {
-    "slant": "slant",
     "3D": "3-d",
     "5line": "5lineoblique",
     "alpha": "alphabet",

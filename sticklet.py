@@ -44,8 +44,8 @@ async def sticklet(event):
     nfont = random.choice(font_file_)
     FONT_FILE = await event.client.download_media(nfont)
     font = ImageFont.truetype(FONT_FILE, size=fontsize)
+    fontsize = 100
     while draw.multiline_textsize(sticktext, font=font) > (512, 512):
-        fontsize = 100
         font = ImageFont.truetype(FONT_FILE, size=fontsize)
     width, height = draw.multiline_textsize(sticktext, font=font)
     draw.multiline_text(

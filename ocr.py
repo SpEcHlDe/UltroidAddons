@@ -37,10 +37,7 @@ async def ocrify(ult):
     if not (repm.media and repm.media.photo):
         return await msg.edit("`Not a Photo..`")
     dl = await repm.download_media()
-    if pat:
-        atr = f"&language={pat}&"
-    else:
-        atr = "&"
+    atr = f"&language={pat}&" if pat else "&"
     tt = uf(dl)
     li = "https://telegra.ph" + tt[0]
     gr = r.get(

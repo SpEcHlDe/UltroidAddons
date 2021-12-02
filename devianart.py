@@ -50,7 +50,7 @@ async def downakd(e):
         img = await download_file(on["src"], f"resources/downloads/{match}-{num}.jpg")
         num += 1
         out.append(img)
-    if len(out) == 0:
+    if not out:
         return await xd.edit("`No Results Found!`")
     await e.client.send_file(
         e.chat_id, out, caption=f"Uploaded {len(res)} Images\n", album=True

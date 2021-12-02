@@ -75,14 +75,14 @@ async def _(event):
             await eor(event, str(exc))
         else:
             os.remove(required_file_name)
-            required_file_name = required_file_name + ".opus"
+            required_file_name += ".opus"
         end = datetime.now()
         ms = (end - start).seconds
         await event.reply(
             file=required_file_name,
         )
         os.remove(required_file_name)
-        await eod(event, "Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms))
+        await eod(event, "Processed {} ({}) in {} seconds!".format(text[:97], lan, ms))
     except Exception as e:
         await eor(event, str(e))
 
